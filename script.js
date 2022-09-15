@@ -95,6 +95,8 @@ const gameOver = () => {
   display.classList.add("inactive");
 };
 
+
+
 const closeModal = () => {
   modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
@@ -116,11 +118,14 @@ const start = () => {
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "flex";
       display.classList.remove("inactive");
+
       clearInterval(startCountdown);
+      countdownOverlay.style.display = "none"
       startTime = new Date().getTime();
     }
     count--;
   }, 1000);
+
 };
 
 // START Countdown
