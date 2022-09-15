@@ -4,7 +4,7 @@ const startBtn = document.getElementById("start");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
-const nextBtn = document.getElementById('nexts');
+
 
 // variables
 let userText = "";
@@ -81,8 +81,8 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
-      <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+    <p>You took: <span class="bold">${timeTaken}</span>seconds</p>
+      <p>You made <span class="bold red">${errorCount}</span>mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
 
@@ -108,7 +108,7 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = '<h1>${count}</h1>';
+    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
     if (count == 0) {
@@ -116,7 +116,6 @@ const start = () => {
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "flex";
       display.classList.remove("inactive");
-
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
